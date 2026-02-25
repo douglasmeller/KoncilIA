@@ -97,7 +97,7 @@ button:hover {
     font-size: 13px;
 }
 
-.file-card button {
+.file-card button:not(.btn-verde) {
     width: auto;
     padding: 6px 12px;
     margin-top: 10px;
@@ -105,7 +105,7 @@ button:hover {
     background: var(--dark);
 }
 
-.file-card button:hover {
+.file-card button:hover:not(.btn-verde) {
     background: red;
 }
 
@@ -200,10 +200,11 @@ button:hover {
 }
 
 .btn-verde {
-  background-color: #10b981#10b981;
+  background-color: #10b981;
   color: white;
   border: none;
-  padding: 6px 10px;
+  padding: 4px 8px;
+  font-size: 12px;
   border-radius: 6px;
   cursor: pointer;
   margin-right: 5px;
@@ -211,4 +212,19 @@ button:hover {
 
 .btn-verde:hover {
   opacity: 0.85;
+  background-color: #059669;
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 por linha */
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.buttons-container button {
+  width: auto;
+  padding: 4px 6px;
+  font-size: 12px;
+  
 }

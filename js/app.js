@@ -315,15 +315,16 @@ function renderFiles() {
 
         <a href="${file.colabLink}" target="_blank">🔗 Acessar link</a><br><br>
 
-        <button class="btn-verde" onclick="togglePin(${index})">
-   		 ${file.pinned ? "📌 Desfixar" : "📌 Fixar"}
-	</button>
+        <div class="buttons-container">
+                <button class="btn-verde" onclick="togglePin(${index})">
+                ${file.pinned ? "📌 Desfixar" : "📌 Fixar"}
+            </button>
 
-	<button class="btn-verde" onclick="editFile(${index})">✏️ Editar</button>
-    <button class="btn-verde" onclick="exportFile(${index})">Download</button>
-    <button class="btn-verde" onclick="deleteFile(${index})">Excluir</button>
-        `;
-
+            <button class="btn-verde" onclick="editFile(${index})">✏️ Editar</button>
+            <button class="btn-verde" onclick="exportFile(${index})">Download</button>
+            <button class="btn-verde" onclick="deleteFile(${index})">Excluir</button>
+        </div>    
+                `;            
         list.appendChild(div);
     });
 
