@@ -198,3 +198,17 @@ button:hover {
   border-radius: 6px;
   border: 1px solid #e5e7eb;
 }
+
+.btn-verde {
+  background-color: #10b981#10b981;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btn-verde:hover {
+  opacity: 0.85;
+}
