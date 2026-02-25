@@ -1,0 +1,200 @@
+:root {
+    --green: #14a058;
+    --dark: #0f172a;
+    --bg: #f2fdf6;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--dark);
+    padding: 30px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--green);
+}
+.subtitle {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+input, select, textarea, button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin-top: 8px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+/* BUTTONS */
+button {
+    background: var(--green);
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--dark);
+}
+
+/* FILE GRID */
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 15px;
+}
+
+.file-card {
+    background: white;
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--green);
+}
+
+.file-card small {
+    color: gray;
+}
+
+.file-card a {
+    color: var(--green);
+    font-size: 13px;
+}
+
+.file-card button {
+    width: auto;
+    padding: 6px 12px;
+    margin-top: 10px;
+    margin-right: 5px;
+    background: var(--dark);
+}
+
+.file-card button:hover {
+    background: red;
+}
+
+/* FILTERS */
+.filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+.pinned-card {
+    background: #ecfdf5; /* verde clarinho */
+    border: 2px solid #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+    position: relative;
+}
+.pinned-card::before {
+    content: "PINNED";
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: #10b981;
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-weight: bold;
+}
+.add-box {
+    margin-bottom: 20px;
+}
+
+.add-toggle-btn {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.add-toggle-btn:hover {
+    background: #059669;
+}
+
+#addForm {
+  max-height: 2000px; /* aberto */
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.8s ease;
+  opacity: 1;
+
+}
+
+#addForm.hidden {
+  max-height: 0;      /* fechado */
+  opacity: 0;
+}
+
+.tag-badge {
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.tag-badge {
+    font-weight: 500;
+    font-size: 13px;
+    border-radius: 8px;
+    padding: 4px 10px;
+}
+
+.stats-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.stats-box div {
+  background: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
