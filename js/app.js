@@ -1,5 +1,3 @@
-FUNCIONANDO
-
 const owners = ["Amanda","Ana Patrícia","Angélica","Bianca","Bruna","Douglas","Ester","Fernando","Gedla","George","Izabelle","Laura","Maria Eduarda","Maria Fernanda","Matheus","Nathalia Doro","Nathalia Morais","Pedro","Stéfani"];
 const tagsList = {
     "Shopee": "#f97316",
