@@ -308,10 +308,37 @@ function renderFiles() {
         <small>👤 ${file.owner} | 🕒 ${date}</small><br><br>
         
 
-        <b>Descrição:</b><br>${file.desc}<br><br>
-        <b>Inputs:</b><br>${file.inputs || "—"}<br><br>
-        <b>Outputs:</b><br>${file.outputs || "—"}<br><br>
-        <b>Observações:</b><br>${file.notes || "—"}<br><br>
+        <p>
+        <b>Descrição:</b>
+        <span>${truncateText(file.desc, 100)}</span>
+        ${file.desc && file.desc.length > 100 ? 
+        `<span class="see-more" onclick="toggleText(this, \`${file.desc.replace(/`/g, "\\`")}\`)"> Ver mais</span>` 
+        : ""}
+        </p>
+
+        <p>
+        <b>Inputs:</b>
+        <span>${truncateText(file.inputs || "", 100)}</span>
+        ${file.inputs && file.inputs.length > 100 ? 
+        `<span class="see-more" onclick="toggleText(this, \`${file.inputs.replace(/`/g, "\\`")}\`)"> Ver mais</span>` 
+        : ""}
+        </p>
+
+        <p>
+        <b>Outputs:</b>
+        <span>${truncateText(file.outputs || "", 100)}</span>
+        ${file.outputs && file.outputs.length > 100 ? 
+        `<span class="see-more" onclick="toggleText(this, \`${file.outputs.replace(/`/g, "\\`")}\`)"> Ver mais</span>` 
+        : ""}
+        </p>
+
+        <p>
+        <b>Observações:</b>
+        <span>${truncateText(file.notes || "", 100)}</span>
+        ${file.notes && file.notes.length > 100 ? 
+        `<span class="see-more" onclick="toggleText(this, \`${file.notes.replace(/`/g, "\\`")}\`)"> Ver mais</span>` 
+        : ""}
+        </p>
 
         <a href="${file.colabLink}" target="_blank">🔗 Acessar link</a><br><br>
 
@@ -331,6 +358,7 @@ function renderFiles() {
     updateStats();
 }
 renderFiles();
+
 
 function updateStats() {
     const total = files.length;
@@ -382,3 +410,40 @@ document.getElementById("filterOwner").addEventListener("change", renderFiles);
 document.getElementById("searchInput").addEventListener("input", renderFiles);
 document.getElementById("startDate").addEventListener("change", renderFiles);
 document.getElementById("endDate").addEventListener("change", renderFiles);
+
+function setupCounter(fieldId, counterId) {
+  const field = document.getElementById(fieldId);
+  const counter = document.getElementById(counterId);
+
+  field.addEventListener("input", () => {
+    const length = field.value.length;
+    counter.textContent = `${length}/100`;
+
+    if (length >= 100) {
+      counter.style.color = "red";
+    } else {
+      counter.style.color = "#666";
+    }
+  });
+}
+
+// ===== TRUNCAR TEXTO =====
+function truncateText(text, limit = 100) {
+    if (!text) return "";
+    if (text.length <= limit) return text;
+    return text.substring(0, limit) + "...";
+}
+
+function toggleText(element, fullText) {
+    const span = element.previousElementSibling;
+
+    if (element.textContent === "Ver mais") {
+        span.textContent = fullText;
+        element.textContent = "Ver menos";
+    } else {
+        span.textContent = truncateText(fullText, 100);
+        element.textContent = "Ver mais";
+    }
+}
+
+setupCounter("desc", "desc-counter");

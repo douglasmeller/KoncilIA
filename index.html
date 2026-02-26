@@ -44,10 +44,14 @@
 
 <input type="text" id="colabLink" placeholder="Link do Google Colab">
 
-<textarea id="desc" placeholder="Descrição da automação"></textarea>
-<textarea id="inputs" placeholder="Inputs necessários (login, planilhas, APIs...)"></textarea>
-<textarea id="outputs" placeholder="Outputs gerados (CSV, banco, email...)"></textarea>
-<textarea id="notes" placeholder="Riscos / Observações"></textarea>
+<textarea id="desc" maxlength="100" placeholder="Descrição da automação"></textarea>
+<div class="char-counter" id="desc-counter">0/100</div>
+<textarea id="inputs" maxlength="100" placeholder="Inputs necessários"></textarea>
+<div class="char-counter" id="desc-counter">0/100</div>
+<textarea id="outputs" maxlength="100" placeholder="Outputs gerados"></textarea>
+<div class="char-counter" id="desc-counter">0/100</div>
+<textarea id="notes" maxlength="100" placeholder="Riscos / Observações"></textarea>
+<div class="char-counter" id="desc-counter">0/100</div>
 
 <button onclick="addFile()">Salvar na biblioteca</button>
 
