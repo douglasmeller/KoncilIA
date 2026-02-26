@@ -97,7 +97,7 @@ button:hover {
     font-size: 13px;
 }
 
-.file-card button:not(.btn-verde) {
+.file-card button:not(.btn-verde):not(.btn-vermelho) {
     width: auto;
     padding: 6px 12px;
     margin-top: 10px;
@@ -105,7 +105,7 @@ button:hover {
     background: var(--dark);
 }
 
-.file-card button:hover:not(.btn-verde) {
+.file-card button:hover:not(.btn-verde):not(.btn-vermelho) {
     background: red;
 }
 
@@ -227,4 +227,18 @@ button:hover {
   padding: 4px 6px;
   font-size: 12px;
   
+}
+
+.btn-vermelho {
+  background-color: #ef4444; /* vermelho moderno */
+  color: white;
+  border: none;
+  padding: 4px 6px;
+  font-size: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-vermelho:hover {
+  background-color: #dc2626; /* vermelho mais escuro */
 }

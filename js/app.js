@@ -322,7 +322,7 @@ function renderFiles() {
 
             <button class="btn-verde" onclick="editFile(${index})">✏️ Editar</button>
             <button class="btn-verde" onclick="exportFile(${index})">Download</button>
-            <button class="btn-verde" onclick="deleteFile(${index})">Excluir</button>
+            <button class="btn-vermelho" onclick="deleteFile(${index})">Excluir</button>
         </div>    
                 `;            
         list.appendChild(div);
